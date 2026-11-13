@@ -81,6 +81,8 @@ add_executable(GridironLite)
 target_sources(GridironLite
   PRIVATE
     src/main.cpp
+    src/platform/input.cpp
+    src/platform/window.cpp
 )
 gridiron_apply_build_flags(GridironLite)
 
