@@ -1,0 +1,157 @@
+\doxysection{platform::Gamepad\+Handle Class Reference}
+\hypertarget{classplatform_1_1_gamepad_handle}{}\label{classplatform_1_1_gamepad_handle}\index{platform::GamepadHandle@{platform::GamepadHandle}}
+
+
+{\ttfamily \+\#include $<$input.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} (SDL\+\_\+\+Joystick\+ID id)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_abf8e3ae0c32347db57870970ea8e329b}{\texorpdfstring{$\sim$}{\string~}\+Gamepad\+Handle}} () noexcept=default
+\begin{DoxyCompactList}\small\item\em Destructor -\/ Clean up gamepad instance. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_afca0fc1ee1fee651197ed577711b4389}{Gamepad\+Handle}} (const Gamepad\+Handle \&)=delete
+\begin{DoxyCompactList}\small\item\em No copying. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} \& \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a5dc45d8f0a42dd01a38d3cf882965613}{operator=}} (const \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} \&)=delete
+\begin{DoxyCompactList}\small\item\em No copy-\/assigning. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_aeb28da02523888c5e8ec522295e240aa}{Gamepad\+Handle}} (Gamepad\+Handle \&\&) noexcept=default
+\begin{DoxyCompactList}\small\item\em Move allowed. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} \& \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a0bf5b9236a8139ef2878c1743febd0bd}{operator=}} (\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} \&\&) noexcept=default
+\begin{DoxyCompactList}\small\item\em Move-\/assignment allowed. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a5dd9bcaece41f6caad14cc3b51873c00}{valid}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Invalid if setup failed in constructor. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Joystick\+ID \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_ab3a0810afe07e6bd4d5d648f5b73c4eb}{get\+Id}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get the Joystick ID it was opened from for the manager to match with. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Gamepad \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a1fa9d77823cd4426cd92d30896c992c4}{native\+\_\+gamepad}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get pointer to gamepad. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Joystick\+ID \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a1dc48d790732fb43ca48fc2d3794d858}{id\_}}
+\item 
+std::\+unique\+\_\+ptr$<$ SDL\+\_\+\+Gamepad, \doxymbox{\hyperlink{structplatform_1_1_gamepad_deleter}{Gamepad\+Deleter}} $>$ \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a8f52520a2190e24a9d5ce5d2ab1d7801}{pad\_}}
+\end{DoxyCompactItemize}
+
+
+\label{classplatform_1_1_gamepad_handle_doc-constructors}
+\Hypertarget{classplatform_1_1_gamepad_handle_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}\index{platform::GamepadHandle@{platform::GamepadHandle}!GamepadHandle@{GamepadHandle}}
+\index{GamepadHandle@{GamepadHandle}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{GamepadHandle()}{GamepadHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e} 
+platform::\+\+Gamepad\+Handle::\+\+Gamepad\+Handle (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Joystick\+ID}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+\Hypertarget{classplatform_1_1_gamepad_handle_abf8e3ae0c32347db57870970ea8e329b}\index{platform::GamepadHandle@{platform::GamepadHandle}!````~GamepadHandle@{\texorpdfstring{$\sim$}{\string~}GamepadHandle}}
+\index{````~GamepadHandle@{\texorpdfstring{$\sim$}{\string~}GamepadHandle}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GamepadHandle()}{\string~GamepadHandle()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_abf8e3ae0c32347db57870970ea8e329b} 
+platform::\+\+Gamepad\+Handle::\+\texorpdfstring{$\sim$}{\string~}\+Gamepad\+Handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+Destructor -\/ Clean up gamepad instance. 
+
+\Hypertarget{classplatform_1_1_gamepad_handle_afca0fc1ee1fee651197ed577711b4389}\index{platform::GamepadHandle@{platform::GamepadHandle}!GamepadHandle@{GamepadHandle}}
+\index{GamepadHandle@{GamepadHandle}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{GamepadHandle()}{GamepadHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_afca0fc1ee1fee651197ed577711b4389} 
+platform::\+\+Gamepad\+Handle::\+\+Gamepad\+Handle (\begin{DoxyParamCaption}\item[{const Gamepad\+Handle \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+No copying. 
+
+\Hypertarget{classplatform_1_1_gamepad_handle_aeb28da02523888c5e8ec522295e240aa}\index{platform::GamepadHandle@{platform::GamepadHandle}!GamepadHandle@{GamepadHandle}}
+\index{GamepadHandle@{GamepadHandle}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{GamepadHandle()}{GamepadHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_aeb28da02523888c5e8ec522295e240aa} 
+platform::\+\+Gamepad\+Handle::\+\+Gamepad\+Handle (\begin{DoxyParamCaption}\item[{Gamepad\+Handle \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+Move allowed. 
+
+
+
+\label{classplatform_1_1_gamepad_handle_doc-func-members}
+\Hypertarget{classplatform_1_1_gamepad_handle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classplatform_1_1_gamepad_handle_ab3a0810afe07e6bd4d5d648f5b73c4eb}\index{platform::GamepadHandle@{platform::GamepadHandle}!getId@{getId}}
+\index{getId@{getId}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_ab3a0810afe07e6bd4d5d648f5b73c4eb} 
+SDL\+\_\+\+Joystick\+ID platform::\+\+Gamepad\+Handle::\+get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Get the Joystick ID it was opened from for the manager to match with. 
+
+\Hypertarget{classplatform_1_1_gamepad_handle_a1fa9d77823cd4426cd92d30896c992c4}\index{platform::GamepadHandle@{platform::GamepadHandle}!native\_gamepad@{native\_gamepad}}
+\index{native\_gamepad@{native\_gamepad}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{native\_gamepad()}{native\_gamepad()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_a1fa9d77823cd4426cd92d30896c992c4} 
+SDL\+\_\+\+Gamepad \texorpdfstring{$\ast$}{*} platform::\+\+Gamepad\+Handle::\+native\+\_\+gamepad (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Get pointer to gamepad. 
+
+\Hypertarget{classplatform_1_1_gamepad_handle_a5dc45d8f0a42dd01a38d3cf882965613}\index{platform::GamepadHandle@{platform::GamepadHandle}!operator=@{operator=}}
+\index{operator=@{operator=}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_a5dc45d8f0a42dd01a38d3cf882965613} 
+\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} \& platform::\+\+Gamepad\+Handle::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+No copy-\/assigning. 
+
+\Hypertarget{classplatform_1_1_gamepad_handle_a0bf5b9236a8139ef2878c1743febd0bd}\index{platform::GamepadHandle@{platform::GamepadHandle}!operator=@{operator=}}
+\index{operator=@{operator=}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_a0bf5b9236a8139ef2878c1743febd0bd} 
+\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} \& platform::\+\+Gamepad\+Handle::\+operator= (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle_a26c4f69ca032a5b5511345ed9c2e3d4e}{Gamepad\+Handle}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+Move-\/assignment allowed. 
+
+\Hypertarget{classplatform_1_1_gamepad_handle_a5dd9bcaece41f6caad14cc3b51873c00}\index{platform::GamepadHandle@{platform::GamepadHandle}!valid@{valid}}
+\index{valid@{valid}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{valid()}{valid()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_a5dd9bcaece41f6caad14cc3b51873c00} 
+bool platform::\+\+Gamepad\+Handle::\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Invalid if setup failed in constructor. 
+
+
+
+\label{classplatform_1_1_gamepad_handle_doc-variable-members}
+\Hypertarget{classplatform_1_1_gamepad_handle_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classplatform_1_1_gamepad_handle_a1dc48d790732fb43ca48fc2d3794d858}\index{platform::GamepadHandle@{platform::GamepadHandle}!id\_@{id\_}}
+\index{id\_@{id\_}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{id\_}{id\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_a1dc48d790732fb43ca48fc2d3794d858} 
+SDL\+\_\+\+Joystick\+ID platform::\+\+Gamepad\+Handle::\+id\_\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classplatform_1_1_gamepad_handle_a8f52520a2190e24a9d5ce5d2ab1d7801}\index{platform::GamepadHandle@{platform::GamepadHandle}!pad\_@{pad\_}}
+\index{pad\_@{pad\_}!platform::GamepadHandle@{platform::GamepadHandle}}
+\doxysubsubsection{\texorpdfstring{pad\_}{pad\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_gamepad_handle_a8f52520a2190e24a9d5ce5d2ab1d7801} 
+std::\+unique\+\_\+ptr$<$SDL\+\_\+\+Gamepad, \doxymbox{\hyperlink{structplatform_1_1_gamepad_deleter}{Gamepad\+Deleter}}$>$ platform::\+\+Gamepad\+Handle::\+pad\_\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+platform/\doxymbox{\hyperlink{input_8hpp}{input.\+hpp}}\item 
+src/\+platform/\doxymbox{\hyperlink{input_8cpp}{input.\+cpp}}\end{DoxyCompactItemize}

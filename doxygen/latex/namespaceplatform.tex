@@ -1,0 +1,176 @@
+\doxysection{platform Namespace Reference}
+\hypertarget{namespaceplatform}{}\label{namespaceplatform}\index{platform@{platform}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_action_state}{Action\+State}}
+\begin{DoxyCompactList}\small\item\em data struct for button or axis (joystick) presses \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{classplatform_1_1_context}{Context}}
+\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_gamepad_deleter}{Gamepad\+Deleter}}
+\begin{DoxyCompactList}\small\item\em Custom deleter for SDL\+\_\+\+Gamepad smart pointer. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle}{Gamepad\+Handle}}
+\item 
+class \doxymbox{\hyperlink{classplatform_1_1_input}{Input}}
+\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_key_binding}{Key\+Binding}}
+\begin{DoxyCompactList}\small\item\em for SDL Key \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} action, value \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_pad_axis_binding}{Pad\+Axis\+Binding}}
+\begin{DoxyCompactList}\small\item\em for Gamepad axis (joystick) \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} action, value \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_pad_button_binding}{Pad\+Button\+Binding}}
+\begin{DoxyCompactList}\small\item\em for Gamepad button \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} action, value \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{classplatform_1_1_window}{Window}}
+\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_window_deleter}{Window\+Deleter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}} : std::\+uint8\+\_\+t \{ \newline
+\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a60ed328e715f75a67c41f2ea5ce48323}{MoveX}} = 0u
+, \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56abe0f0f147335df20b0c09a6192ecf447}{MoveY}}
+, \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a70d9be9b139893aa6c69b5e77e614311}{Confirm}}
+, \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56aea4788705e6873b424c65e91c2846b19}{Cancel}}
+, \newline
+\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56ae93f994f01c537c4e2f7d8528c3eb5e9}{Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em enum to define all options for keyboard and gamepad \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std::\+array$<$ \doxymbox{\hyperlink{structplatform_1_1_key_binding}{Key\+Binding}}, 6 $>$ \doxymbox{\hyperlink{namespaceplatform_a705fa5efb9d0195c71a8d5fb32e135fa}{k\+Key\+Bindings}}
+\item 
+constexpr std::\+array$<$ \doxymbox{\hyperlink{structplatform_1_1_pad_button_binding}{Pad\+Button\+Binding}}, 2 $>$ \doxymbox{\hyperlink{namespaceplatform_a9be8534c12fedefa956ed27ddd5082f1}{k\+Pad\+Button\+Bindings}}
+\item 
+constexpr std::\+array$<$ \doxymbox{\hyperlink{structplatform_1_1_pad_axis_binding}{Pad\+Axis\+Binding}}, 2 $>$ \doxymbox{\hyperlink{namespaceplatform_a0464fb4b3745b619c8dc70e1756104d0}{k\+Pad\+Axis\+Bindings}}
+\item 
+constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{namespaceplatform_a3d3ce789123ffce849dfa0e6b49e5a70}{action\+Count}} = static\+\_\+cast$<$std::\+size\+\_\+t$>$(\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56ae93f994f01c537c4e2f7d8528c3eb5e9}{Action\+Id::\+\+Count}})
+\item 
+constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{namespaceplatform_a94d12be7b67a2aa290941b1fd01b122a}{k\+Max\+Gamepads}} = 2u
+\item 
+constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{namespaceplatform_aeefcf24a011ac9b1b70e0dbd12609edd}{k\+Key\+Bindings\+Count}} = k\+Key\+Bindings.\+size()
+\item 
+constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{namespaceplatform_a2f2500cbc37beb80f241b4d5eaf83e6b}{k\+Pad\+Button\+Bindings\+Count}} = k\+Pad\+Button\+Bindings.\+size()
+\end{DoxyCompactItemize}
+
+
+\label{namespaceplatform_doc-enum-members}
+\Hypertarget{namespaceplatform_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}\index{platform@{platform}!ActionId@{ActionId}}
+\index{ActionId@{ActionId}!platform@{platform}}
+\doxysubsubsection{\texorpdfstring{ActionId}{ActionId}}
+{\footnotesize\ttfamily \label{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56} 
+enum class \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{platform::\+\+Action\+Id}} :\+ std::\+uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+enum to define all options for keyboard and gamepad 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveX@{MoveX}!platform@{platform}}
+\index{platform@{platform}!MoveX@{MoveX}}
+}\Hypertarget{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a60ed328e715f75a67c41f2ea5ce48323}\label{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a60ed328e715f75a67c41f2ea5ce48323} 
+MoveX&X axis movement. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveY@{MoveY}!platform@{platform}}
+\index{platform@{platform}!MoveY@{MoveY}}
+}\Hypertarget{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56abe0f0f147335df20b0c09a6192ecf447}\label{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56abe0f0f147335df20b0c09a6192ecf447} 
+MoveY&Y axis movement. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Confirm@{Confirm}!platform@{platform}}
+\index{platform@{platform}!Confirm@{Confirm}}
+}\Hypertarget{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a70d9be9b139893aa6c69b5e77e614311}\label{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a70d9be9b139893aa6c69b5e77e614311} 
+Confirm&Confirm/\+\+OK. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cancel@{Cancel}!platform@{platform}}
+\index{platform@{platform}!Cancel@{Cancel}}
+}\Hypertarget{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56aea4788705e6873b424c65e91c2846b19}\label{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56aea4788705e6873b424c65e91c2846b19} 
+Cancel&Cancel action. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Count@{Count}!platform@{platform}}
+\index{platform@{platform}!Count@{Count}}
+}\Hypertarget{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56ae93f994f01c537c4e2f7d8528c3eb5e9}\label{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56ae93f994f01c537c4e2f7d8528c3eb5e9} 
+Count&Count helper for enum, must be last. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{namespaceplatform_doc-var-members}
+\Hypertarget{namespaceplatform_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceplatform_a3d3ce789123ffce849dfa0e6b49e5a70}\index{platform@{platform}!actionCount@{actionCount}}
+\index{actionCount@{actionCount}!platform@{platform}}
+\doxysubsubsection{\texorpdfstring{actionCount}{actionCount}}
+{\footnotesize\ttfamily \label{namespaceplatform_a3d3ce789123ffce849dfa0e6b49e5a70} 
+std::\+size\+\_\+t platform::\+action\+Count = static\+\_\+cast$<$std::\+size\+\_\+t$>$(\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56ae93f994f01c537c4e2f7d8528c3eb5e9}{Action\+Id::\+\+Count}})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceplatform_a705fa5efb9d0195c71a8d5fb32e135fa}\index{platform@{platform}!kKeyBindings@{kKeyBindings}}
+\index{kKeyBindings@{kKeyBindings}!platform@{platform}}
+\doxysubsubsection{\texorpdfstring{kKeyBindings}{kKeyBindings}}
+{\footnotesize\ttfamily \label{namespaceplatform_a705fa5efb9d0195c71a8d5fb32e135fa} 
+std::\+array$<$\doxymbox{\hyperlink{structplatform_1_1_key_binding}{Key\+Binding}}, 6$>$ platform::\+k\+Key\+Bindings\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{}
+\DoxyCodeLine{\ \ \{SDL\_SCANCODE\_D,\ \ \ \ \ \ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a60ed328e715f75a67c41f2ea5ce48323}{ActionId::MoveX}},\ \ \ \ +1.0f\},}
+\DoxyCodeLine{\ \ \{SDL\_SCANCODE\_A,\ \ \ \ \ \ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a60ed328e715f75a67c41f2ea5ce48323}{ActionId::MoveX}},\ \ \ \ -\/1.0f\},}
+\DoxyCodeLine{\ \ \{SDL\_SCANCODE\_W,\ \ \ \ \ \ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56abe0f0f147335df20b0c09a6192ecf447}{ActionId::MoveY}},\ \ \ \ +1.0f\},}
+\DoxyCodeLine{\ \ \{SDL\_SCANCODE\_S,\ \ \ \ \ \ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56abe0f0f147335df20b0c09a6192ecf447}{ActionId::MoveY}},\ \ \ \ -\/1.0f\},}
+\DoxyCodeLine{\ \ \{SDL\_SCANCODE\_RETURN,\ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a70d9be9b139893aa6c69b5e77e614311}{ActionId::Confirm}},\ \ +1.0f\},}
+\DoxyCodeLine{\ \ \{SDL\_SCANCODE\_ESCAPE,\ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56aea4788705e6873b424c65e91c2846b19}{ActionId::Cancel}},\ \ \ +1.0f\},}
+\DoxyCodeLine{\}\}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceplatform_aeefcf24a011ac9b1b70e0dbd12609edd}\index{platform@{platform}!kKeyBindingsCount@{kKeyBindingsCount}}
+\index{kKeyBindingsCount@{kKeyBindingsCount}!platform@{platform}}
+\doxysubsubsection{\texorpdfstring{kKeyBindingsCount}{kKeyBindingsCount}}
+{\footnotesize\ttfamily \label{namespaceplatform_aeefcf24a011ac9b1b70e0dbd12609edd} 
+std::\+size\+\_\+t platform::\+k\+Key\+Bindings\+Count = k\+Key\+Bindings.\+size()\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceplatform_a94d12be7b67a2aa290941b1fd01b122a}\index{platform@{platform}!kMaxGamepads@{kMaxGamepads}}
+\index{kMaxGamepads@{kMaxGamepads}!platform@{platform}}
+\doxysubsubsection{\texorpdfstring{kMaxGamepads}{kMaxGamepads}}
+{\footnotesize\ttfamily \label{namespaceplatform_a94d12be7b67a2aa290941b1fd01b122a} 
+std::\+size\+\_\+t platform::\+k\+Max\+Gamepads = 2u\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\Hypertarget{namespaceplatform_a0464fb4b3745b619c8dc70e1756104d0}\index{platform@{platform}!kPadAxisBindings@{kPadAxisBindings}}
+\index{kPadAxisBindings@{kPadAxisBindings}!platform@{platform}}
+\doxysubsubsection{\texorpdfstring{kPadAxisBindings}{kPadAxisBindings}}
+{\footnotesize\ttfamily \label{namespaceplatform_a0464fb4b3745b619c8dc70e1756104d0} 
+std::\+array$<$\doxymbox{\hyperlink{structplatform_1_1_pad_axis_binding}{Pad\+Axis\+Binding}}, 2$>$ platform::\+k\+Pad\+Axis\+Bindings\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{}
+\DoxyCodeLine{\ \ \{SDL\_GAMEPAD\_AXIS\_LEFTX,\ \ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a60ed328e715f75a67c41f2ea5ce48323}{ActionId::MoveX}},\ \ \textcolor{keyword}{false},\ \ +1.0f,\ 8000.0f\},}
+\DoxyCodeLine{\ \ \{SDL\_GAMEPAD\_AXIS\_LEFTY,\ \ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56abe0f0f147335df20b0c09a6192ecf447}{ActionId::MoveY}},\ \ \textcolor{keyword}{false},\ \ +1.0f,\ 8000.0f\}}
+\DoxyCodeLine{\}\}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceplatform_a9be8534c12fedefa956ed27ddd5082f1}\index{platform@{platform}!kPadButtonBindings@{kPadButtonBindings}}
+\index{kPadButtonBindings@{kPadButtonBindings}!platform@{platform}}
+\doxysubsubsection{\texorpdfstring{kPadButtonBindings}{kPadButtonBindings}}
+{\footnotesize\ttfamily \label{namespaceplatform_a9be8534c12fedefa956ed27ddd5082f1} 
+std::\+array$<$\doxymbox{\hyperlink{structplatform_1_1_pad_button_binding}{Pad\+Button\+Binding}}, 2$>$ platform::\+k\+Pad\+Button\+Bindings\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\{}
+\DoxyCodeLine{\ \ \{SDL\_GAMEPAD\_BUTTON\_SOUTH,\ \ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a70d9be9b139893aa6c69b5e77e614311}{ActionId::Confirm}},\ \ +1.0f\},}
+\DoxyCodeLine{\ \ \{SDL\_GAMEPAD\_BUTTON\_EAST,\ \ \ \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56aea4788705e6873b424c65e91c2846b19}{ActionId::Cancel}},\ \ \ -\/1.0f\}}
+\DoxyCodeLine{\}\}}
+
+\end{DoxyCode}
+\Hypertarget{namespaceplatform_a2f2500cbc37beb80f241b4d5eaf83e6b}\index{platform@{platform}!kPadButtonBindingsCount@{kPadButtonBindingsCount}}
+\index{kPadButtonBindingsCount@{kPadButtonBindingsCount}!platform@{platform}}
+\doxysubsubsection{\texorpdfstring{kPadButtonBindingsCount}{kPadButtonBindingsCount}}
+{\footnotesize\ttfamily \label{namespaceplatform_a2f2500cbc37beb80f241b4d5eaf83e6b} 
+std::\+size\+\_\+t platform::\+k\+Pad\+Button\+Bindings\+Count = k\+Pad\+Button\+Bindings.\+size()\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+

@@ -10,14 +10,20 @@
 
 namespace platform {
 
+/**
+ * @brief enum to define all options for keyboard and gamepad
+ */
 enum class ActionId : std::uint8_t {
-  MoveX = 0u,
-  MoveY,
-  Confirm,
-  Cancel,
-  Count   // Count must be last
+  MoveX = 0u,   ///< X axis movement
+  MoveY,        ///< Y axis movement
+  Confirm,      ///< Confirm/OK
+  Cancel,       ///< Cancel action
+  Count         ///< Count helper for enum, must be last
 };
 
+/**
+ * @brief data struct for button or axis (joystick) presses
+ */
 struct ActionState {
   bool held = false;
   bool pressed = false;
@@ -25,18 +31,27 @@ struct ActionState {
   float value = 0.0f;     // 0/1 for buttons, -1..1 for axes
 };
 
+/**
+ * @brief for SDL Key <-> action, value
+ */
 struct KeyBinding {
   SDL_Scancode key;
   ActionId action;
   float value = 0.0f;
 };
 
+/**
+ * @brief for Gamepad button <-> action, value
+ */
 struct PadButtonBinding {
   SDL_GamepadButton button;
   ActionId action;
   float value = 0.0f;
 };
 
+/**
+ * @brief for Gamepad axis (joystick) <-> action, value
+ */
 struct PadAxisBinding {
   SDL_GamepadAxis axis;
   ActionId action;
@@ -70,7 +85,7 @@ inline constexpr std::size_t kKeyBindingsCount = kKeyBindings.size();
 inline constexpr std::size_t kPadButtonBindingsCount = kPadButtonBindings.size();
 
 /**
- * GamepadDeleter - Custom deleter for SDL_Gamepad smart pointer
+ * @brief Custom deleter for SDL_Gamepad smart pointer
  */
 struct GamepadDeleter {
   void operator()(SDL_Gamepad* pad) const noexcept {
@@ -84,33 +99,39 @@ class GamepadHandle {
 public:
 
   /**
-   * Constructor
+   * @brief Constructor
    */
   explicit GamepadHandle(SDL_JoystickID id);
 
   /**
-   * Destructor - Clean up gamepad instance
+   * @brief Destructor - Clean up gamepad instance
    */
   ~GamepadHandle() noexcept = default;
 
-  // Copy and move - Non-copyable but movable
+  /** @brief No copying */ 
   GamepadHandle(const GamepadHandle&) = delete;
+
+  /** @brief No copy-assigning */
   GamepadHandle& operator=(const GamepadHandle &) = delete;
+
+  /** @brief Move allowed */
   GamepadHandle(GamepadHandle&&) noexcept = default;
+
+  /** @brief Move-assignment allowed */
   GamepadHandle& operator=(GamepadHandle&&) noexcept = default;
 
   /**
-   * valid - Invalid if setup failed in constructor
+   * @brief Invalid if setup failed in constructor
    */
   [[nodiscard]] bool valid() const noexcept;
 
   /**
-   * getId - Get the Joystick ID it was opened from for the manager to match with
+   * @brief Get the Joystick ID it was opened from for the manager to match with
    */
   [[nodiscard]] SDL_JoystickID getId() const noexcept;
 
   /**
-   * native_gamepad - Get pointer to gamepad
+   * @brief Get pointer to gamepad
    */
   [[nodiscard]] SDL_Gamepad* native_gamepad() const noexcept;
 
@@ -123,43 +144,43 @@ class Input {
 public:
 
   /**
-   * init - Open connection pads
+   * @brief Open connection pads
    */
   bool init();
 
   /**
-   * pump - Called per event from main
+   * @brief Called per event from main
    */
   void pump(const SDL_Event& event);
 
   /**
-   * newFrame - Compute pressed/released, latch prev
+   * @brief Compute pressed/released, latch prev
    */
   void newFrame();
 
   /**
-   * held - Check if button is held down
+   * @brief Check if button is held down
    */
   [[nodiscard]] bool held(ActionId a) const noexcept {
     return curr_[idx(a)].held;
   }
 
   /**
-   * pressed - Check if button is pressed down
+   * @brief Check if button is pressed down
    */
   [[nodiscard]] bool pressed(ActionId a) const noexcept {
     return curr_[idx(a)].pressed;
   }
 
   /**
-   * released - Check if button is released
+   * @brief Check if button is released
    */
   [[nodiscard]] bool released(ActionId a) const noexcept {
     return curr_[idx(a)].released;
   }
 
   /**
-   * axis - Determine value of the axis
+   * @brief Determine value of the axis
    */
   [[nodiscard]] float axis(ActionId a) const noexcept {
     return curr_[idx(a)].value;
@@ -179,6 +200,9 @@ private:
   std::array<std::int16_t, SDL_GAMEPAD_AXIS_COUNT> axisRaw_{};
   int activeSlot_ = -1;
 
+  /**
+   * @brief Find slot the based on Joystick ID
+   */
   int findSlot(SDL_JoystickID id) const noexcept;
 
   int freeSlot() const noexcept;

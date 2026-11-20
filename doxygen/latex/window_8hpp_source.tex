@@ -1,0 +1,65 @@
+\doxysection{window.\+hpp}
+\hypertarget{window_8hpp_source}{}\label{window_8hpp_source}\index{src/platform/window.hpp@{src/platform/window.hpp}}
+\doxymbox{\hyperlink{window_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceplatform}{platform}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{Context}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{Context}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{\string~Context}}()\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classplatform_1_1_context_a172a1e5294a3526b8c183868a7be8a12}{init}}(SDL\_InitFlags\ flags);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ Copy\ and\ move\ -\/\ Non-\/copyable\ and\ non-\/movable\ (represents\ global\ state)}}
+\DoxyCodeLine{00033\ \ \ \doxymbox{\hyperlink{classplatform_1_1_context_a56fe496ffa28e6fbc00e2513a8f0e57a}{Context}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{Context}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00034\ \ \ \doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{Context}}\&\ \doxymbox{\hyperlink{classplatform_1_1_context_ad116dafa165806561f065c2a9faa183a}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{Context}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00035\ \ \ \doxymbox{\hyperlink{classplatform_1_1_context_ad81dad5996453d1547aea4c8b7d0d0a6}{Context}}(\doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{Context}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036\ \ \ \doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{Context}}\&\ \doxymbox{\hyperlink{classplatform_1_1_context_a3e37a665b41f9c7c15a6e0a84f2cd11c}{operator=}}(\doxymbox{\hyperlink{classplatform_1_1_context_a58c512d8f730c19f8ced106e16798eed}{Context}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structplatform_1_1_window_deleter}{WindowDeleter}}\ \{}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{structplatform_1_1_window_deleter_af4060875d73cd6e50d0dfa0585a89fb7}{operator()}}(SDL\_Window*\ window)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (window)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ SDL\_DestroyWindow(window);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}(std::string\_view\ title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ SDL\_WindowFlags\ flags\ =\ 0)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ Destructor\ and\ move\ semantics}}
+\DoxyCodeLine{00060\ \ \ \doxymbox{\hyperlink{classplatform_1_1_window_a2513953497a3ed89b970bdb4cff63c19}{\string~Window}}()\ noexcept\ =\ default;}
+\DoxyCodeLine{00061\ \ \ \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}(\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}\&\&)\ noexcept\ =\ default;}
+\DoxyCodeLine{00062\ \ \ \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}\&\ operator=(\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}\&\&)\ noexcept\ =\ default;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}(const\ \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}\&)\ noexcept\ =\ delete;}
+\DoxyCodeLine{00065\ \ \ \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}\&\ operator=(const\ \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}}\&)\ noexcept\ =\ delete;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classplatform_1_1_window_a0ffcb3c73976c6dcbae6db79424a852f}{valid}}()\ noexcept;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ [[nodiscard]]\ SDL\_Window*\ \doxymbox{\hyperlink{classplatform_1_1_window_a3a9564be9972996ce8485283129f38ef}{native\_handle}}()\ const\ noexcept;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \ \ [[nodiscard]]\ std::pair<\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}>\ \doxymbox{\hyperlink{classplatform_1_1_window_a5a70e5f40d512711a6dada31307bb6ee}{size}}()\ const\ noexcept;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ private:}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{comment}{//\ Window\ instance}}
+\DoxyCodeLine{00085\ \ \ std::unique\_ptr<SDL\_Window,\ \doxymbox{\hyperlink{structplatform_1_1_window_deleter}{WindowDeleter}}>\ \doxymbox{\hyperlink{classplatform_1_1_window_afe5555cf41831b977753bcd61fd8f270}{window\_}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ \}\ \textcolor{comment}{//\ namespace\ platform}}
+
+\end{DoxyCode}

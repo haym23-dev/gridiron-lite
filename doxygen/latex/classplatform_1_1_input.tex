@@ -1,0 +1,210 @@
+\doxysection{platform::Input Class Reference}
+\hypertarget{classplatform_1_1_input}{}\label{classplatform_1_1_input}\index{platform::Input@{platform::Input}}
+
+
+{\ttfamily \+\#include $<$input.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classplatform_1_1_input_a92844832f869424507e6e7afa8fdc425}{init}} ()
+\begin{DoxyCompactList}\small\item\em Open connection pads. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classplatform_1_1_input_a7191f14bac033d1f7a142d8c956f5c9c}{pump}} (const SDL\+\_\+\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Called per event from main. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{classplatform_1_1_input_a400f64912aed06b275a2542346f50600}{new\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Compute pressed/\+released, latch prev. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classplatform_1_1_input_adf35f85f95cb0d9b7c11c72a278807b5}{held}} (\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}} a) const noexcept
+\begin{DoxyCompactList}\small\item\em Check if button is held down. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classplatform_1_1_input_a688a61de751443331c2594de7f2b1cda}{pressed}} (\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}} a) const noexcept
+\begin{DoxyCompactList}\small\item\em Check if button is pressed down. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classplatform_1_1_input_a1826ba7f6fcd6709bbd3ca851a060620}{released}} (\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}} a) const noexcept
+\begin{DoxyCompactList}\small\item\em Check if button is released. \end{DoxyCompactList}\item 
+float \doxymbox{\hyperlink{classplatform_1_1_input_a4363d8a615ab5fa9badddd23aa421994}{axis}} (\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}} a) const noexcept
+\begin{DoxyCompactList}\small\item\em Determine value of the axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{classplatform_1_1_input_aa2d7a8cfa1c25bbc7f2e7dfa31393078}{find\+Slot}} (SDL\+\_\+\+Joystick\+ID id) const noexcept
+\begin{DoxyCompactList}\small\item\em Find slot the based on Joystick ID. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{classplatform_1_1_input_a178e858f57e453dcd1d9a31681531817}{free\+Slot}} () const noexcept
+\item 
+void \doxymbox{\hyperlink{classplatform_1_1_input_a9d8ecedbc7591654308a720064cebeb3}{clear\+Pad\+State}} () noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{classplatform_1_1_input_ad734a85b8d39d57ea385aeb2aebb0b70}{idx}} (\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}} a) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+array$<$ std::\+optional$<$ \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle}{Gamepad\+Handle}} $>$, \doxymbox{\hyperlink{namespaceplatform_a94d12be7b67a2aa290941b1fd01b122a}{k\+Max\+Gamepads}} $>$ \doxymbox{\hyperlink{classplatform_1_1_input_a5afb8b538f3b60d0c1462e5c31af76d3}{pads\_}} \{\}
+\item 
+std::\+array$<$ \doxymbox{\hyperlink{structplatform_1_1_action_state}{Action\+State}}, \doxymbox{\hyperlink{namespaceplatform_a3d3ce789123ffce849dfa0e6b49e5a70}{action\+Count}} $>$ \doxymbox{\hyperlink{classplatform_1_1_input_a1bd9839ab0933b0bcf5600a2bf5329de}{curr\_}} \{\}
+\item 
+std::\+array$<$ \doxymbox{\hyperlink{structplatform_1_1_action_state}{Action\+State}}, \doxymbox{\hyperlink{namespaceplatform_a3d3ce789123ffce849dfa0e6b49e5a70}{action\+Count}} $>$ \doxymbox{\hyperlink{classplatform_1_1_input_a51d47a4561a340e13dbd9850be8c4343}{prev\_}} \{\}
+\item 
+std::\+array$<$ bool, \doxymbox{\hyperlink{namespaceplatform_aeefcf24a011ac9b1b70e0dbd12609edd}{k\+Key\+Bindings\+Count}} $>$ \doxymbox{\hyperlink{classplatform_1_1_input_a01de384a62fdd129a6c7a34c32329a40}{key\+Down\_}} \{\}
+\item 
+std::\+array$<$ bool, \doxymbox{\hyperlink{namespaceplatform_a2f2500cbc37beb80f241b4d5eaf83e6b}{k\+Pad\+Button\+Bindings\+Count}} $>$ \doxymbox{\hyperlink{classplatform_1_1_input_a795371bbabef6a33aaab8bfc94d88522}{pad\+Down\_}} \{\}
+\item 
+std::\+array$<$ std::\+int16\+\_\+t, SDL\+\_\+\+GAMEPAD\+\_\+\+AXIS\+\_\+\+COUNT $>$ \doxymbox{\hyperlink{classplatform_1_1_input_a4607b3b657053c7ba57940538a5d389b}{axis\+Raw\_}} \{\}
+\item 
+int \doxymbox{\hyperlink{classplatform_1_1_input_ac7dbe17e939629f9cf1f048f8bbed214}{active\+Slot\_}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\label{classplatform_1_1_input_doc-func-members}
+\Hypertarget{classplatform_1_1_input_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classplatform_1_1_input_a4363d8a615ab5fa9badddd23aa421994}\index{platform::Input@{platform::Input}!axis@{axis}}
+\index{axis@{axis}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{axis()}{axis()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a4363d8a615ab5fa9badddd23aa421994} 
+float platform::\+\+Input::\+axis (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}}}]{a}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Determine value of the axis. 
+
+\Hypertarget{classplatform_1_1_input_a9d8ecedbc7591654308a720064cebeb3}\index{platform::Input@{platform::Input}!clearPadState@{clearPadState}}
+\index{clearPadState@{clearPadState}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{clearPadState()}{clearPadState()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a9d8ecedbc7591654308a720064cebeb3} 
+void platform::\+\+Input::\+clear\+Pad\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classplatform_1_1_input_aa2d7a8cfa1c25bbc7f2e7dfa31393078}\index{platform::Input@{platform::Input}!findSlot@{findSlot}}
+\index{findSlot@{findSlot}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{findSlot()}{findSlot()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_aa2d7a8cfa1c25bbc7f2e7dfa31393078} 
+int platform::\+\+Input::\+find\+Slot (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Joystick\+ID}]{id}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+Find slot the based on Joystick ID. 
+
+\Hypertarget{classplatform_1_1_input_a178e858f57e453dcd1d9a31681531817}\index{platform::Input@{platform::Input}!freeSlot@{freeSlot}}
+\index{freeSlot@{freeSlot}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{freeSlot()}{freeSlot()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a178e858f57e453dcd1d9a31681531817} 
+int platform::\+\+Input::\+free\+Slot (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classplatform_1_1_input_adf35f85f95cb0d9b7c11c72a278807b5}\index{platform::Input@{platform::Input}!held@{held}}
+\index{held@{held}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{held()}{held()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_adf35f85f95cb0d9b7c11c72a278807b5} 
+bool platform::\+\+Input::\+held (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}}}]{a}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Check if button is held down. 
+
+\Hypertarget{classplatform_1_1_input_ad734a85b8d39d57ea385aeb2aebb0b70}\index{platform::Input@{platform::Input}!idx@{idx}}
+\index{idx@{idx}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{idx()}{idx()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_ad734a85b8d39d57ea385aeb2aebb0b70} 
+constexpr std::\+size\+\_\+t platform::\+\+Input::\+idx (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}}}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classplatform_1_1_input_a92844832f869424507e6e7afa8fdc425}\index{platform::Input@{platform::Input}!init@{init}}
+\index{init@{init}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a92844832f869424507e6e7afa8fdc425} 
+bool platform::\+\+Input::\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Open connection pads. 
+
+\Hypertarget{classplatform_1_1_input_a400f64912aed06b275a2542346f50600}\index{platform::Input@{platform::Input}!newFrame@{newFrame}}
+\index{newFrame@{newFrame}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{newFrame()}{newFrame()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a400f64912aed06b275a2542346f50600} 
+void platform::\+\+Input::\+new\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Compute pressed/\+released, latch prev. 
+
+\Hypertarget{classplatform_1_1_input_a688a61de751443331c2594de7f2b1cda}\index{platform::Input@{platform::Input}!pressed@{pressed}}
+\index{pressed@{pressed}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{pressed()}{pressed()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a688a61de751443331c2594de7f2b1cda} 
+bool platform::\+\+Input::\+pressed (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}}}]{a}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Check if button is pressed down. 
+
+\Hypertarget{classplatform_1_1_input_a7191f14bac033d1f7a142d8c956f5c9c}\index{platform::Input@{platform::Input}!pump@{pump}}
+\index{pump@{pump}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{pump()}{pump()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a7191f14bac033d1f7a142d8c956f5c9c} 
+void platform::\+\+Input::\+pump (\begin{DoxyParamCaption}\item[{const SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Called per event from main. 
+
+\Hypertarget{classplatform_1_1_input_a1826ba7f6fcd6709bbd3ca851a060620}\index{platform::Input@{platform::Input}!released@{released}}
+\index{released@{released}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{released()}{released()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a1826ba7f6fcd6709bbd3ca851a060620} 
+bool platform::\+\+Input::\+released (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{Action\+Id}}}]{a}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Check if button is released. 
+
+
+
+\label{classplatform_1_1_input_doc-variable-members}
+\Hypertarget{classplatform_1_1_input_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classplatform_1_1_input_ac7dbe17e939629f9cf1f048f8bbed214}\index{platform::Input@{platform::Input}!activeSlot\_@{activeSlot\_}}
+\index{activeSlot\_@{activeSlot\_}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{activeSlot\_}{activeSlot\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_ac7dbe17e939629f9cf1f048f8bbed214} 
+int platform::\+\+Input::\+active\+Slot\_ = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classplatform_1_1_input_a4607b3b657053c7ba57940538a5d389b}\index{platform::Input@{platform::Input}!axisRaw\_@{axisRaw\_}}
+\index{axisRaw\_@{axisRaw\_}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{axisRaw\_}{axisRaw\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a4607b3b657053c7ba57940538a5d389b} 
+std::\+array$<$std::\+int16\+\_\+t, SDL\+\_\+\+GAMEPAD\+\_\+\+AXIS\+\_\+\+COUNT$>$ platform::\+\+Input::\+axis\+Raw\_ \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classplatform_1_1_input_a1bd9839ab0933b0bcf5600a2bf5329de}\index{platform::Input@{platform::Input}!curr\_@{curr\_}}
+\index{curr\_@{curr\_}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{curr\_}{curr\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a1bd9839ab0933b0bcf5600a2bf5329de} 
+std::\+array$<$\doxymbox{\hyperlink{structplatform_1_1_action_state}{Action\+State}}, \doxymbox{\hyperlink{namespaceplatform_a3d3ce789123ffce849dfa0e6b49e5a70}{action\+Count}}$>$ platform::\+\+Input::\+curr\_ \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classplatform_1_1_input_a01de384a62fdd129a6c7a34c32329a40}\index{platform::Input@{platform::Input}!keyDown\_@{keyDown\_}}
+\index{keyDown\_@{keyDown\_}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{keyDown\_}{keyDown\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a01de384a62fdd129a6c7a34c32329a40} 
+std::\+array$<$bool, \doxymbox{\hyperlink{namespaceplatform_aeefcf24a011ac9b1b70e0dbd12609edd}{k\+Key\+Bindings\+Count}}$>$ platform::\+\+Input::\+key\+Down\_ \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classplatform_1_1_input_a795371bbabef6a33aaab8bfc94d88522}\index{platform::Input@{platform::Input}!padDown\_@{padDown\_}}
+\index{padDown\_@{padDown\_}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{padDown\_}{padDown\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a795371bbabef6a33aaab8bfc94d88522} 
+std::\+array$<$bool, \doxymbox{\hyperlink{namespaceplatform_a2f2500cbc37beb80f241b4d5eaf83e6b}{k\+Pad\+Button\+Bindings\+Count}}$>$ platform::\+\+Input::\+pad\+Down\_ \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classplatform_1_1_input_a5afb8b538f3b60d0c1462e5c31af76d3}\index{platform::Input@{platform::Input}!pads\_@{pads\_}}
+\index{pads\_@{pads\_}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{pads\_}{pads\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a5afb8b538f3b60d0c1462e5c31af76d3} 
+std::\+array$<$std::\+optional$<$\doxymbox{\hyperlink{classplatform_1_1_gamepad_handle}{Gamepad\+Handle}}$>$, \doxymbox{\hyperlink{namespaceplatform_a94d12be7b67a2aa290941b1fd01b122a}{k\+Max\+Gamepads}}$>$ platform::\+\+Input::\+pads\_ \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classplatform_1_1_input_a51d47a4561a340e13dbd9850be8c4343}\index{platform::Input@{platform::Input}!prev\_@{prev\_}}
+\index{prev\_@{prev\_}!platform::Input@{platform::Input}}
+\doxysubsubsection{\texorpdfstring{prev\_}{prev\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_input_a51d47a4561a340e13dbd9850be8c4343} 
+std::\+array$<$\doxymbox{\hyperlink{structplatform_1_1_action_state}{Action\+State}}, \doxymbox{\hyperlink{namespaceplatform_a3d3ce789123ffce849dfa0e6b49e5a70}{action\+Count}}$>$ platform::\+\+Input::\+prev\_ \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+platform/\doxymbox{\hyperlink{input_8hpp}{input.\+hpp}}\item 
+src/\+platform/\doxymbox{\hyperlink{input_8cpp}{input.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,126 @@
+\doxysection{platform::Window Class Reference}
+\hypertarget{classplatform_1_1_window}{}\label{classplatform_1_1_window}\index{platform::Window@{platform::Window}}
+
+
+{\ttfamily \+\#include $<$window.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} (std::\+string\+\_\+view title, int width, int height, SDL\+\_\+\+Window\+Flags flags=0) noexcept
+\item 
+\doxymbox{\hyperlink{classplatform_1_1_window_a2513953497a3ed89b970bdb4cff63c19}{\texorpdfstring{$\sim$}{\string~}\+Window}} () noexcept=default
+\item 
+\doxymbox{\hyperlink{classplatform_1_1_window_a62728f454dcc1c7b8fd415aa702e107c}{Window}} (Window \&\&) noexcept=default
+\item 
+\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} \& \doxymbox{\hyperlink{classplatform_1_1_window_afd61639c9ddbe4829e75c4d7e8df5e56}{operator=}} (\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} \&\&) noexcept=default
+\item 
+\doxymbox{\hyperlink{classplatform_1_1_window_a60149835b9cdb61e3eb6b369b1842f70}{Window}} (const Window \&) noexcept=delete
+\item 
+\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} \& \doxymbox{\hyperlink{classplatform_1_1_window_ab752d6c1414e20cefdcd244ed3c06832}{operator=}} (const \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} \&) noexcept=delete
+\item 
+bool \doxymbox{\hyperlink{classplatform_1_1_window_a0ffcb3c73976c6dcbae6db79424a852f}{valid}} () noexcept
+\item 
+SDL\+\_\+\+Window \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classplatform_1_1_window_a3a9564be9972996ce8485283129f38ef}{native\+\_\+handle}} () const noexcept
+\item 
+std::\+pair$<$ int, int $>$ \doxymbox{\hyperlink{classplatform_1_1_window_a5a70e5f40d512711a6dada31307bb6ee}{size}} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+unique\+\_\+ptr$<$ SDL\+\_\+\+Window, \doxymbox{\hyperlink{structplatform_1_1_window_deleter}{Window\+Deleter}} $>$ \doxymbox{\hyperlink{classplatform_1_1_window_afe5555cf41831b977753bcd61fd8f270}{window\_}} \{nullptr\}
+\end{DoxyCompactItemize}
+
+
+\label{classplatform_1_1_window_doc-constructors}
+\Hypertarget{classplatform_1_1_window_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}\index{platform::Window@{platform::Window}!Window@{Window}}
+\index{Window@{Window}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5} 
+platform::\+\+Window::\+\+Window (\begin{DoxyParamCaption}\item[{std::\+string\+\_\+view}]{title}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{SDL\+\_\+\+Window\+Flags}]{flags}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & -\/ Title of the window \\
+\hline
+{\em width} & -\/ Width of window in pixels \\
+\hline
+{\em height} & -\/ Height of window in pixels \\
+\hline
+{\em flags} & -\/ SDL \doxylink{classplatform_1_1_window}{Window} Flags (default to 0) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classplatform_1_1_window_a2513953497a3ed89b970bdb4cff63c19}\index{platform::Window@{platform::Window}!````~Window@{\texorpdfstring{$\sim$}{\string~}Window}}
+\index{````~Window@{\texorpdfstring{$\sim$}{\string~}Window}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Window()}{\string~Window()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_a2513953497a3ed89b970bdb4cff63c19} 
+platform::\+\+Window::\+\texorpdfstring{$\sim$}{\string~}\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classplatform_1_1_window_a62728f454dcc1c7b8fd415aa702e107c}\index{platform::Window@{platform::Window}!Window@{Window}}
+\index{Window@{Window}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_a62728f454dcc1c7b8fd415aa702e107c} 
+platform::\+\+Window::\+\+Window (\begin{DoxyParamCaption}\item[{Window \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classplatform_1_1_window_a60149835b9cdb61e3eb6b369b1842f70}\index{platform::Window@{platform::Window}!Window@{Window}}
+\index{Window@{Window}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_a60149835b9cdb61e3eb6b369b1842f70} 
+platform::\+\+Window::\+\+Window (\begin{DoxyParamCaption}\item[{const Window \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}, {\ttfamily [noexcept]}}
+
+
+
+\label{classplatform_1_1_window_doc-func-members}
+\Hypertarget{classplatform_1_1_window_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classplatform_1_1_window_a3a9564be9972996ce8485283129f38ef}\index{platform::Window@{platform::Window}!native\_handle@{native\_handle}}
+\index{native\_handle@{native\_handle}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{native\_handle()}{native\_handle()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_a3a9564be9972996ce8485283129f38ef} 
+SDL\+\_\+\+Window \texorpdfstring{$\ast$}{*} platform::\+\+Window::\+native\+\_\+handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+native\+\_\+handle -\/ Return the window pointer \Hypertarget{classplatform_1_1_window_ab752d6c1414e20cefdcd244ed3c06832}\index{platform::Window@{platform::Window}!operator=@{operator=}}
+\index{operator=@{operator=}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_ab752d6c1414e20cefdcd244ed3c06832} 
+\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} \& platform::\+\+Window::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classplatform_1_1_window_afd61639c9ddbe4829e75c4d7e8df5e56}\index{platform::Window@{platform::Window}!operator=@{operator=}}
+\index{operator=@{operator=}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_afd61639c9ddbe4829e75c4d7e8df5e56} 
+\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} \& platform::\+\+Window::\+operator= (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classplatform_1_1_window_a4bca897f0525587e4e07218ea7cab5a5}{Window}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classplatform_1_1_window_a5a70e5f40d512711a6dada31307bb6ee}\index{platform::Window@{platform::Window}!size@{size}}
+\index{size@{size}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_a5a70e5f40d512711a6dada31307bb6ee} 
+std::\+pair$<$ int, int $>$ platform::\+\+Window::\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+size -\/ Getter for window size from height/\+width \Hypertarget{classplatform_1_1_window_a0ffcb3c73976c6dcbae6db79424a852f}\index{platform::Window@{platform::Window}!valid@{valid}}
+\index{valid@{valid}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{valid()}{valid()}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_a0ffcb3c73976c6dcbae6db79424a852f} 
+bool platform::\+\+Window::\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+valid -\/ Check if initialized correctly 
+
+\label{classplatform_1_1_window_doc-variable-members}
+\Hypertarget{classplatform_1_1_window_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classplatform_1_1_window_afe5555cf41831b977753bcd61fd8f270}\index{platform::Window@{platform::Window}!window\_@{window\_}}
+\index{window\_@{window\_}!platform::Window@{platform::Window}}
+\doxysubsubsection{\texorpdfstring{window\_}{window\_}}
+{\footnotesize\ttfamily \label{classplatform_1_1_window_afe5555cf41831b977753bcd61fd8f270} 
+std::\+unique\+\_\+ptr$<$SDL\+\_\+\+Window, \doxymbox{\hyperlink{structplatform_1_1_window_deleter}{Window\+Deleter}}$>$ platform::\+\+Window::\+window\_ \{nullptr\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+platform/\doxymbox{\hyperlink{window_8hpp}{window.\+hpp}}\item 
+src/\+platform/\doxymbox{\hyperlink{window_8cpp}{window.\+cpp}}\end{DoxyCompactItemize}

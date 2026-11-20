@@ -1,0 +1,73 @@
+\doxysection{src/\+platform/\+input.hpp File Reference}
+\hypertarget{input_8hpp}{}\label{input_8hpp}\index{src/platform/input.hpp@{src/platform/input.hpp}}
+{\ttfamily \+\#include $<$SDL3/\+\+SDL.\+h$>$}\newline
+{\ttfamily \+\#include $<$array$>$}\newline
+{\ttfamily \+\#include $<$cstddef$>$}\newline
+{\ttfamily \+\#include $<$cstdint$>$}\newline
+{\ttfamily \+\#include $<$memory$>$}\newline
+{\ttfamily \+\#include $<$optional$>$}\newline
+Include dependency graph for input.\+hpp:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{input_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{input_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_action_state}{platform::\+\+Action\+State}}
+\begin{DoxyCompactList}\small\item\em data struct for button or axis (joystick) presses \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_key_binding}{platform::\+\+Key\+Binding}}
+\begin{DoxyCompactList}\small\item\em for SDL Key \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} action, value \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_pad_button_binding}{platform::\+\+Pad\+Button\+Binding}}
+\begin{DoxyCompactList}\small\item\em for Gamepad button \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} action, value \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_pad_axis_binding}{platform::\+\+Pad\+Axis\+Binding}}
+\begin{DoxyCompactList}\small\item\em for Gamepad axis (joystick) \texorpdfstring{$<$}{<}-\/\texorpdfstring{$>$}{>} action, value \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{structplatform_1_1_gamepad_deleter}{platform::\+\+Gamepad\+Deleter}}
+\begin{DoxyCompactList}\small\item\em Custom deleter for SDL\+\_\+\+Gamepad smart pointer. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{classplatform_1_1_gamepad_handle}{platform::\+\+Gamepad\+Handle}}
+\item 
+class \doxymbox{\hyperlink{classplatform_1_1_input}{platform::\+\+Input}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceplatform}{platform}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56}{platform::\+\+Action\+Id}} : std::\+uint8\+\_\+t \{ \newline
+\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a60ed328e715f75a67c41f2ea5ce48323}{platform::\+\+MoveX}} = 0u
+, \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56abe0f0f147335df20b0c09a6192ecf447}{platform::\+\+MoveY}}
+, \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56a70d9be9b139893aa6c69b5e77e614311}{platform::\+\+Confirm}}
+, \doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56aea4788705e6873b424c65e91c2846b19}{platform::\+\+Cancel}}
+, \newline
+\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56ae93f994f01c537c4e2f7d8528c3eb5e9}{platform::\+\+Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em enum to define all options for keyboard and gamepad \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std::\+array$<$ \doxymbox{\hyperlink{structplatform_1_1_key_binding}{Key\+Binding}}, 6 $>$ \doxymbox{\hyperlink{namespaceplatform_a705fa5efb9d0195c71a8d5fb32e135fa}{platform::\+k\+Key\+Bindings}}
+\item 
+constexpr std::\+array$<$ \doxymbox{\hyperlink{structplatform_1_1_pad_button_binding}{Pad\+Button\+Binding}}, 2 $>$ \doxymbox{\hyperlink{namespaceplatform_a9be8534c12fedefa956ed27ddd5082f1}{platform::\+k\+Pad\+Button\+Bindings}}
+\item 
+constexpr std::\+array$<$ \doxymbox{\hyperlink{structplatform_1_1_pad_axis_binding}{Pad\+Axis\+Binding}}, 2 $>$ \doxymbox{\hyperlink{namespaceplatform_a0464fb4b3745b619c8dc70e1756104d0}{platform::\+k\+Pad\+Axis\+Bindings}}
+\item 
+constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{namespaceplatform_a3d3ce789123ffce849dfa0e6b49e5a70}{platform::\+action\+Count}} = static\+\_\+cast$<$std::\+size\+\_\+t$>$(\doxymbox{\hyperlink{namespaceplatform_a7ef76eb2c8f8a2f9d2abf48be3e0dd56ae93f994f01c537c4e2f7d8528c3eb5e9}{Action\+Id::\+\+Count}})
+\item 
+constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{namespaceplatform_a94d12be7b67a2aa290941b1fd01b122a}{platform::\+k\+Max\+Gamepads}} = 2u
+\item 
+constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{namespaceplatform_aeefcf24a011ac9b1b70e0dbd12609edd}{platform::\+k\+Key\+Bindings\+Count}} = k\+Key\+Bindings.\+size()
+\item 
+constexpr std::\+size\+\_\+t \doxymbox{\hyperlink{namespaceplatform_a2f2500cbc37beb80f241b4d5eaf83e6b}{platform::\+k\+Pad\+Button\+Bindings\+Count}} = k\+Pad\+Button\+Bindings.\+size()
+\end{DoxyCompactItemize}
